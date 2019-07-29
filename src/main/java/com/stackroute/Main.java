@@ -4,12 +4,13 @@ import com.stackroute.domain.Actor;
 import com.stackroute.domain.BeanConfig;
 import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
         Movie movie = (Movie) context.getBean("movieComponent");
         System.out.println(movie);
         Movie movie1=(Movie)context.getBean("movieComponent");
@@ -21,7 +22,7 @@ public class Main {
 
         System.out.println(actor1);
         System.out.println(actor2);
-
+         context.close();
 
     }
 

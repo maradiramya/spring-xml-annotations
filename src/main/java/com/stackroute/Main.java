@@ -15,6 +15,7 @@ public class Main {
         Movie movie1=(Movie)context.getBean("movieComponent");
         System.out.println(movie==movie1);
 
+
         Actor actor1 = (Actor) context.getBean("actor1");
         Actor actor2 = (Actor) context.getBean("actor2");
 

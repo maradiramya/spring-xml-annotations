@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "com.stackroute.domain")
 
 public class BeanConfig {
-//    @Bean
-//    public Movie movie() {
+//@Bean(name="movie")
+//    public Movie movie1() {
 //        Movie movie = new Movie();
 //        return movie;
 //    }
-    
+
     @Bean
     public Actor actor() {
         Actor actor = new Actor("ramya","female",23);

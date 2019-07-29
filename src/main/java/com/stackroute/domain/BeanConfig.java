@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = "com.stackroute.domain")
+
 public class BeanConfig {
 //    @Bean
 //    public Movie movie() {
@@ -15,10 +16,19 @@ public class BeanConfig {
 
     @Bean
     public Actor actor() {
-        Actor actor = new Actor();
-        actor.setName("ramya");
-        actor.setAge(23);
-        actor.setGender("female");
+        Actor actor = new Actor("ramya","female",23);
+
         return actor;
+    }
+    @Bean
+    public Actor actor1() {
+        Actor actor1 = new Actor("abc","male",24);
+        return actor1;
+    }
+    @Bean
+    public Actor actor2()
+    {
+        Actor actor2=new Actor("xyz","female",25);
+        return actor2;
     }
 }

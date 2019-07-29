@@ -3,37 +3,23 @@ package com.stackroute;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.BeanConfig;
 import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
+
 
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
-        Movie movie=(Movie)context.getBean("movieComponent");
+        Movie movie = (Movie) context.getBean("movieComponent");
         System.out.println(movie);
+        Movie movie1=(Movie)context.getBean("movieComponent");
+        System.out.println(movie==movie1);
 
+        Actor actor1 = (Actor) context.getBean("actor1");
+        Actor actor2 = (Actor) context.getBean("actor2");
 
-       // ((AbstractApplicationContext)context).registerShutdownHook();
-
-
-//        Movie movie2 = (Movie) context.getBean("movie2");
-//        System.out.println(movie2);
-
-
-//        Actor actor = (Actor) context.getBean("actor");
-//        Actor actor1 = (Actor) context.getBean("actor1");
-//        Actor actor2 = (Actor) context.getBean("actor2");
-//
-//        System.out.println(actor);
-//        System.out.println(actor1);
-//        System.out.println(actor2);
-        //if we try to autowire bytype we will get this exception thrown
-      // org.springframework.beans.factory.UnsatisfiedDependencyException
+        System.out.println(actor1);
+        System.out.println(actor2);
 
 
     }

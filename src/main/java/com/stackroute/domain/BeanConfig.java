@@ -13,6 +13,12 @@ public class BeanConfig {
 //        Movie movie = new Movie();
 //        return movie;
 //    }
+    @Bean
+    public Movie movie1()
+    {
+        Movie movie1=new Movie();
+        return movie1;
+    }
 
     @Bean
     public Actor actor() {

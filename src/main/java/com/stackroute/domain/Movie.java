@@ -7,20 +7,15 @@ import org.springframework.stereotype.Component;
 @Component("movieComponent")
 @Scope("prototype")
 
-public class Movie {
-
-    @Autowired
+public class Movie
+{
+    //@Autowired
     Actor actor;
 
-
-    public Movie() {
-    }
-
-    public Movie(Actor actor)
-    {
+@Autowired
+    public void setActor(Actor actor) {
         this.actor = actor;
     }
-
 
     @Override
     public String toString() {
